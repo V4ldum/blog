@@ -1,0 +1,35 @@
+{
+    "rust-analyzer.server.path": null,
+    "rust-analyzer.rustfmt.overrideCommand": [
+        "leptosfmt",
+        "--config-file",
+        "${workspaceFolder}/leptosfmt.toml",
+        "--stdin",
+        "--rustfmt"
+    ],
+    "rust-analyzer.procMacro.ignored": {
+        "leptos_macro": [
+            // optional:
+            // "component",
+            "server"
+        ],
+    },
+    "rust-analyzer.cargo.features": "all",
+    "emmet.includeLanguages": {
+        "rust": "html",
+        "*.rs": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+        "rust": "html",
+        "*.rs": "html"
+    },
+    "files.associations": {
+        "*.rs": "rust"
+    },
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": true
+    },
+    "css.validate": false,
+}
