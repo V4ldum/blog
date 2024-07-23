@@ -6,7 +6,8 @@ RUN apk update && \
 
 RUN npm install -g sass
 
-RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/latest/download/cargo-leptos-installer.sh | sh
+#RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
+RUN cargo install cargo-leptos
 
 RUN rustup target add wasm32-unknown-unknown
 
