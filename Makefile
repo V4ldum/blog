@@ -13,6 +13,3 @@ run:
 
 clean:
 	rm -r target
-
-deploy:
-	echo "todo"
