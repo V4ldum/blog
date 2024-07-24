@@ -27,10 +27,13 @@ fn split_files_by_year(files: Vec<DirEntry>) -> IndexMap<i32, Vec<DirEntry>> {
 
 #[component]
 pub fn PostsList() -> impl IntoView {
-    let Some(files) = read_posts_files_sorted() else {
+    let files = read_posts_files_sorted().unwrap_or_default();
+
+    if files.is_empty() {
         return view! { <p class="text-lg fond-semibold text-center m-16">"There are no posts yet."</p> }
             .into_view();
-    };
+    }
+
     let grouped_files = split_files_by_year(files);
 
     view! {
