@@ -1,4 +1,4 @@
-use std::{fs::DirEntry, time::SystemTime};
+use std::{fs::DirEntry, time::{Duration, SystemTime, UNIX_EPOCH}};
 
 use crate::utils::posts_files::read_posts_files_sorted;
 
@@ -15,8 +15,8 @@ fn split_files_by_year(files: Vec<DirEntry>) -> IndexMap<i32, Vec<DirEntry>> {
             file.metadata()
                 .expect("the metadata to be readable")
                 .created()
-                .expect("the created date to be readable"),
-        )
+                .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_nanos(1721924110)) // TODO refactor
+            )
         .year();
 
         grouped_files.entry(year).or_default().push(file)

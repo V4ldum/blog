@@ -1,7 +1,7 @@
 use chrono::offset::Utc;
 use chrono::DateTime;
 use leptos::{component, view, IntoView};
-use std::{fs::DirEntry, time::SystemTime};
+use std::{fs::DirEntry, time::{SystemTime, UNIX_EPOCH, Duration}};
 
 use crate::utils::posts_files::StringUrlQuery;
 
@@ -24,7 +24,9 @@ where
                     "{}",
                     <SystemTime as Into<
                         DateTime<Utc>,
-                    >>::into(metadata.created().expect("the created date to be readable"))
+                    >>::into(metadata.created()
+                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_nanos(1721924110)) // TODO refactor
+                )
                         .format("%d %b"),
                 )}
 
