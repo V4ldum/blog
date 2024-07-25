@@ -1,5 +1,8 @@
 use leptos::leptos_dom::logging;
-use std::{fs::{self, DirEntry}, time::{UNIX_EPOCH, Duration}};
+use std::{
+    fs::{self, DirEntry},
+    time::{Duration, UNIX_EPOCH},
+};
 
 pub fn read_posts_files_sorted() -> Option<Vec<DirEntry>> {
     let mut files = read_posts_files()?;
@@ -9,13 +12,13 @@ pub fn read_posts_files_sorted() -> Option<Vec<DirEntry>> {
         b.metadata()
             .expect("the metadata to be readable")
             .created()
-            .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_nanos(1721924110)) // TODO refactor
+            .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_secs(1721924110)) // TODO refactor
             .cmp(
                 &a.metadata()
                     .expect("the metadata date to be readable")
                     .created()
-                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_nanos(1721924110)) // TODO refactor
-                )
+                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_secs(1721924110)), // TODO refactor
+            )
     });
 
     Some(files)

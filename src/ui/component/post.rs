@@ -25,7 +25,7 @@ where
                     <SystemTime as Into<
                         DateTime<Utc>,
                     >>::into(metadata.created()
-                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_nanos(1721924110)) // TODO refactor
+                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_secs(1721924110)) // TODO refactor
                 )
                         .format("%d %b"),
                 )}
