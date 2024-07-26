@@ -15,5 +15,5 @@ echo "$(date --utc +%FT%TZ): Running container..."
 cd /root
 OLD_CONTAINER=$(docker ps -aqf "name=blog")
 
-docker container rm -f $OLD_CONTAINER
+docker container rm -f $OLD_CONTAINER > /dev/null
 docker compose up -d --no-deps --no-recreate blog
