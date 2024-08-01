@@ -26,6 +26,7 @@ chrono = "0.4.38"
 serde = { version = "1.0.203", features = ["derive"] }
 markdown = "1.0.0-alpha.18"
 indexmap = "2.2.6"
+gray_matter = "0.2.8"
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]

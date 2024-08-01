@@ -14,6 +14,8 @@ pub fn App() -> impl IntoView {
         // sets the document title
         <Title text="Valdum's Blog"/>
 
+        <Html lang="en"/>
+
         // content
         <Router fallback=|| view! { <NotFoundPage/> }>
             <main class="flex flex-col max-w-3xl mx-auto px-6">

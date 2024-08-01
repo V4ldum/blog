@@ -1,41 +1,20 @@
-use chrono::offset::Utc;
-use chrono::DateTime;
 use leptos::{component, view, IntoView};
-use std::{fs::DirEntry, time::{SystemTime, UNIX_EPOCH, Duration}};
 
-use crate::utils::posts_files::StringUrlQuery;
+use crate::model;
 
 #[component]
-pub fn Post<'a>(file: &'a DirEntry) -> impl IntoView
+pub fn Post<'a>(post: &'a model::Post) -> impl IntoView
 where
     'a: 'a, // TODO try removing lifetimes in a future update
 {
-    let filename = file
-        .file_name()
-        .into_string()
-        .expect("the filename to be readable")
-        .to_ui_name();
-    let metadata = file.metadata().expect("the metadata to be readable");
-
     view! {
         <div class="flex flex-row items-center my-2">
-            <p class="text-base basis-24 grow-0 shrink-0">
-                {format!(
-                    "{}",
-                    <SystemTime as Into<
-                        DateTime<Utc>,
-                    >>::into(metadata.created()
-                    .unwrap_or_else(|_| UNIX_EPOCH + Duration::from_secs(1721924110)) // TODO refactor
-                )
-                        .format("%d %b"),
-                )}
-
-            </p>
+            <p class="text-base basis-24 grow-0 shrink-0">{format!("{}", &post.metadata.published.format("%d %b"))}</p>
             <a
                 class="text-blue-600 text-lg font-semibold underline-offset-2 decoration-2 hover:text-blue-400 hover:underline"
-                href=format!("/{}", filename.to_url_query())
+                href=format!("/{}", &post.filename)
             >
-                {filename}
+                {&post.metadata.title}
             </a>
         </div>
     }

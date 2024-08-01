@@ -1,11 +1,9 @@
-use std::fs;
-
 use markdown::Options;
 
 use leptos::{component, view, IntoView, Params, SignalWith};
 use leptos_router::{use_params, Params};
 
-use crate::utils::posts_files::{read_posts_files, StringUrlQuery};
+use crate::model::post::Posts;
 
 use super::NotFoundPage;
 
@@ -26,22 +24,16 @@ pub fn PostPage() -> impl IntoView {
     });
 
     // Find the corresponding file on the fs, 404 if not found
-    let Some(mut files) = read_posts_files() else {
-        return view! { <NotFoundPage/> }.into_view();
-    };
-    files.retain(|file| {
-        file.file_name()
-            .into_string()
-            .expect("the filename to be readable")
-            .to_ui_name()
-            .to_url_query()
-            == filename
-    });
-    let Some(file) = files.first() else {
+    let mut posts = Posts::read("posts").posts;
+    posts.retain(|post| post.filename == filename);
+    let Some(post) = posts.first() else {
         return view! { <NotFoundPage/> }.into_view();
     };
 
-    let file_content = fs::read_to_string(file.path()).expect("to be able to read the file");
+    // If the post should not be visible, return 404
+    if !post.metadata.visible {
+        return view! { <NotFoundPage/> }.into_view();
+    }
 
     view! {
         <div class="my-12">
@@ -57,8 +49,8 @@ pub fn PostPage() -> impl IntoView {
             id="markdown"
             inner_html=format!(
                 "<h1>{}</h1>\r\n{}",
-                file.file_name().into_string().expect("the filename to be readable").to_ui_name(),
-                markdown::to_html_with_options(&file_content, &Options::gfm())
+                post.metadata.title,
+                markdown::to_html_with_options(&post.markdown, &Options::gfm())
                     .expect("the Markdown to be properly formatted"),
             )
         >

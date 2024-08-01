@@ -25,6 +25,7 @@ async fn main() {
         .route("/public/*file", get(assets_service))
         // serve the favicon from /favicon.ico
         .route("/favicon.ico", get(static_file_service))
+        .route("/robots.txt", get(static_file_service))
         .leptos_routes(&leptos_options, routes, App)
         .fallback(error_handler)
         .with_state(leptos_options);
@@ -42,5 +43,3 @@ pub fn main() {
     // unless we want this to work with e.g., Trunk for a purely client-side app
     // see lib.rs for hydration function instead
 }
-
-// TODO SSR loading mode ?
