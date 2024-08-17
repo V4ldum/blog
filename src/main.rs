@@ -1,9 +1,9 @@
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
-    use axum::{routing::get, Router}; 
-    use blog::{app::*, utils::fileserv::static_file_service, utils::fileserv::assets_service};
+    use axum::{routing::get, Router};
     use blog::utils::fileserv::error_handler;
+    use blog::{app::*, utils::fileserv::assets_service, utils::fileserv::static_file_service};
     use leptos::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
 

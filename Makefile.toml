@@ -1,0 +1,29 @@
+[tasks.default]
+alias = "watch"
+
+[tasks.setup]
+script = [
+	"cargo install cargo-leptos",
+	"rustup target add wasm32-unknown-unknown"
+]
+
+[tasks.build]
+command = "cargo"
+args = ["leptos", "build"]
+
+[tasks.run]
+command = "cargo"
+args = ["leptos", "serve"]
+
+[tasks.watch]
+command = "cargo"
+args = ["leptos", "watch"]
+
+[tasks.deploy]
+script = [
+	"sudo docker build -t blog .",
+	"sudo docker run -it -p 3000:3000 --mount type=bind,source=\"$(shell pwd)/posts\",target=/app/posts blog"
+]
+[tasks.clean]
+command = "cargo"
+args = ["clean"]

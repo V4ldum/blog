@@ -7,7 +7,7 @@ use serde::Deserialize;
 #[derive(Deserialize, Debug)]
 struct FrontMatter {
     pub title: Option<String>,
-    pub published: Option<String>, // TODO Date
+    pub published: Option<String>,
     pub visible: Option<bool>,
 }
 
