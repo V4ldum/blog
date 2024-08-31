@@ -6,7 +6,7 @@ cd "$HOME/blog"
 git pull
 
 BUILD_VERSION=$(git rev-parse HEAD)
-echo "$(date --utc +%FT%TZ): Releasing new finance version : $BUILD_VERSION"
+echo "$(date --utc +%FT%TZ): Releasing new blog version : $BUILD_VERSION"
 
 echo "$(date --utc +%FT%TZ): Running build..."
 docker build -t blog .
