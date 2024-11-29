@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ssg = { git = "https://github.com/V4ldum/ssg", version = "0.1.1", features = ["markdown", "template", "pretty_url", "tailwind"] }
+ssg = { git = "https://github.com/V4ldum/ssg", version = "0.1.2", features = ["markdown", "template", "pretty_url", "tailwind"] }

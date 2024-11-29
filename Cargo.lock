@@ -1048,8 +1048,8 @@ dependencies = [
 
 [[package]]
 name = "ssg"
-version = "0.1.1"
-source = "git+https://github.com/V4ldum/ssg#25fd0e88adf6430f846b065568566af08153eec9"
+version = "0.1.2"
+source = "git+https://github.com/V4ldum/ssg#6b36caca8d6dafc8bb9a4e65fbf25e71af58d785"
 dependencies = [
  "anyhow",
  "colored",
