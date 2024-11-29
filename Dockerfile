@@ -13,4 +13,5 @@ RUN cargo run --release
 
 # Run
 FROM nginx:alpine AS runner
+RUN sed -i '/^\s*#error_page\s*404/c\    error_page 404 /_404.html;' /etc/nginx/conf.d/default.conf
 COPY --from=builder /work/build /usr/share/nginx/html
