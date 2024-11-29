@@ -8,7 +8,7 @@ RUN apk update -q && \
 WORKDIR /work
 COPY . .
 
-RUN cargo build --release 2>&1 | grep -Ev "^\s+Compiling"
+RUN cargo build --release 2>&1 | grep -Ev "^\s+Compiling" | grep -Ev "^\s+Downloaded"
 RUN cargo run --release
 
 # Run
