@@ -13,6 +13,7 @@ fn main() {
     .plugin(TailwindPlugin::new())
     .plugin(PrettyUrlPlugin::new())
     .picker(FilePicker::new(FileFilter::Directory("public")))
+        .picker(FilePicker::new(FileFilter::Name("_404.html")))
     .build();
 
     ssg.run();
