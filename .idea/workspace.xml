@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20b75312-b2d0-4dea-b680-8a891dcc1dfd" name="Changes" comment="fix dockerfile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/theaa/Documents/Projets/logbot",
+    "last_opened_file_path": "C:/Users/theaa/Documents/Projets/blog",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,6 +119,7 @@
       <workItem from="1732916432902" duration="48000" />
       <workItem from="1732919079441" duration="89000" />
       <workItem from="1733696812647" duration="7000" />
+      <workItem from="1736170199225" duration="60000" />
     </task>
     <task id="LOCAL-00001" summary="update dockerfile">
       <option name="closed" value="true" />
