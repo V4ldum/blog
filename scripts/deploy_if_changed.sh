@@ -21,7 +21,7 @@ elif [ $LOCAL = $BASE ]; then
 
         if [ $DIFF = 0 ]; then
                 echo "$(date --utc +%FT%TZ): Changes detected, deploying new version: $BUILD_VERSION"
-                scripts/deploy.sh
+                bash scripts/deploy.sh
         fi
 elif [ $REMOTE = $BASE ]; then
         BUILD_VERSION=$(git rev-parse HEAD)
@@ -31,7 +31,7 @@ elif [ $REMOTE = $BASE ]; then
 
         if [ $DIFF = 0 ]; then
                 echo "$(date -utc +%FT%TZ): Changes detected, deploying new version: $BUILD_VERSION"
-                scripts/deploy.sh
+                bash scripts/deploy.sh
         fi
 else
         echo "$(date --utc +%FT%TZ): Git is diverged, this is unexpected."
