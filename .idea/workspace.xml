@@ -7,8 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b75312-b2d0-4dea-b680-8a891dcc1dfd" name="Changes" comment="fix dockerfile">
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    <list default="true" id="20b75312-b2d0-4dea-b680-8a891dcc1dfd" name="Changes" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/theaa/Documents/Projets/blog",
+    "last_opened_file_path": "C:/Users/theaa/Documents/Projets/ssg/builder",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,7 +119,7 @@
       <workItem from="1732916432902" duration="48000" />
       <workItem from="1732919079441" duration="89000" />
       <workItem from="1733696812647" duration="7000" />
-      <workItem from="1736170199225" duration="60000" />
+      <workItem from="1736170199225" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="update dockerfile">
       <option name="closed" value="true" />
@@ -137,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732919162935</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1736170389494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736170389494</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +166,7 @@
     <MESSAGE value="add 404" />
     <MESSAGE value="update dockerfile" />
     <MESSAGE value="fix dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix dockerfile" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
