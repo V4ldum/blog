@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-HOME="/home/blog"
+HOME="/root/blog"
 cd "$HOME/blog"
 
 #echo "$(date --utc +%FT%TZ): Fetching remote repository..."

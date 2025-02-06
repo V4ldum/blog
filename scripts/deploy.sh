@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-HOME="/home/blog"
+HOME="/root/blog"
 
 cd "$HOME/blog"
 git pull
