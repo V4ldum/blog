@@ -4,7 +4,7 @@ import 'package:static_shock/static_shock.dart';
 
 Future<void> main(List<String> arguments) async {
   final staticShock =
-      StaticShock(/* TODO sourceDirectoryRelativePath: "sources"*/)
+      StaticShock()
         ..pick(DirectoryPicker.parse("public"))
         ..pick(FilePicker.parse("_404.html"))
         ..plugin(MarkdownPlugin())
