@@ -4,6 +4,10 @@ FROM dart:stable AS builder
 WORKDIR /work
 COPY . .
 
+RUN curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-arm64
+RUN chmod +x tailwindcss-linux-arm64
+RUN mv tailwindcss-linux-arm64 tailwindcss
+
 RUN dart --disable-analytics
 RUN dart run bin/main.dart
 
