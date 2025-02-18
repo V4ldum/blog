@@ -6,7 +6,9 @@ Future<void> main(List<String> arguments) async {
   final staticShock =
       StaticShock()
         ..pick(DirectoryPicker.parse("public"))
-        ..pick(FilePicker.parse("_404.html"))
+        ..pick(FilePicker(FileRelativePath("", "_404", "html")))
+        ..pick(FilePicker(FileRelativePath("", "favicon", "ico")))
+        ..pick(FilePicker(FileRelativePath("", "robots", "txt")))
         ..plugin(MarkdownPlugin())
         ..plugin(JinjaPlugin())
         ..plugin(

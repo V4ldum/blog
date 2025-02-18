@@ -8,9 +8,9 @@ RUN curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/downlo
 RUN chmod +x tailwindcss-linux-arm64
 RUN mv tailwindcss-linux-arm64 tailwindcss
 
-RUN dart --disable-analytics
-RUN dart pub get
-RUN dart run bin/main.dart
+RUN dart --disable-analytics 
+RUN dart pub get > /dev/null 2>&1
+RUN dart run bin/main.dart 1> >(grep '^⚡')
 
 # Run
 FROM nginx:alpine AS runner
