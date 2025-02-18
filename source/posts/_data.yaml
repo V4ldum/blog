@@ -1,3 +1,4 @@
 layout: layouts/posts.jinja
 tags: post
 basePath: /
+rss: true

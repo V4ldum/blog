@@ -16,7 +16,14 @@ Future<void> main(List<String> arguments) async {
             output: "build/styles/tailwind.css",
           ),
         )
-        ..plugin(PrettyUrlsPlugin());
+        ..plugin(PrettyUrlsPlugin())
+        ..plugin(
+          RssPlugin(
+            includePagesByDefault: false,
+            rssFeedPath: FileRelativePath("", "rss", "xml"),
+            site: RssSiteConfiguration(homePageUrl: "https://blog.valdum.dev"),
+          ),
+        );
 
   // Generate the static website.
   await staticShock.generateSite();
