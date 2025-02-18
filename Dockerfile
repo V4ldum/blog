@@ -10,7 +10,7 @@ RUN mv tailwindcss-linux-arm64 tailwindcss
 
 RUN dart --disable-analytics 
 RUN dart pub get > /dev/null 2>&1
-RUN dart run bin/main.dart 1> >(grep '^⚡')
+RUN dart run bin/main.dart 2> >(awk '{print}') 1> >(grep '^⚡')
 
 # Run
 FROM nginx:alpine AS runner
