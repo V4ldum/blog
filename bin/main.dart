@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:static_shock/static_shock.dart';
+import './plugins/html_prettifier_plugin.dart';
 
 Future<void> main(List<String> arguments) async {
   final staticShock =
@@ -19,6 +20,7 @@ Future<void> main(List<String> arguments) async {
           ),
         )
         ..plugin(PrettyUrlsPlugin())
+        ..plugin(HtmlPrettifierPlugin())
         ..plugin(
           RssPlugin(
             includePagesByDefault: false,
