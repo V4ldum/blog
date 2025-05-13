@@ -1,6 +1,5 @@
 # Build
 FROM dart:stable AS builder
-
 WORKDIR /work
 COPY . .
 
